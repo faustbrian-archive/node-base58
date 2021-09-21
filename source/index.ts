@@ -1,5 +1,7 @@
-import { base58 } from "bstring";
+import { encoding } from "bcrypto";
 
 export const encode = (content: string): string =>
-  base58.encode(Buffer.from(content));
-export const decode = (content: string): Buffer => base58.decode(content);
+  encoding.base58.encode(Buffer.from(content));
+
+export const decode = (content: string): Buffer =>
+  encoding.base58.decode(content);
